@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <img src="https://th.bing.com/th/id/OIP.wjJSaoeTMsxtM9NxV7OEDAHaFj?rs=1&pid=ImgDetMain" alt="Hognose"></img>
+    <script src="https://cdn.jsdelivr.net/npm/faker@5.5.3/dist/faker.min.js"></script>
+    <div id="imageContainer"></div>
+    <script>
+        document.getElementById('generateAnimalImage').addEventListener('click', function () {
+          const animalImageUrl = faker.image.urlLoremFlickr({category: 'animals'});
+      
+          const imgElement = document.createElement('img');
+          imgElement.src = animalImageUrl;
+      
+          document.getElementById('imageContainer').appendChild(imgElement);
+        });
+    </script>      
+    <button id="showimage" type="button">Show a new image</button>
     <b>loookkk it hognosee i cant rememberr what the namee of the snakee youu wanted to gett wasss butt i thoughtt id do thiss bcc i rememberr you sayingg it beforeee</b>
 </html>
