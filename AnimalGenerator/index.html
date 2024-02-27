@@ -6,7 +6,7 @@
     <button id="generateAnimalImage" type="button">Show a new image</button>
     <script>
         document.getElementById('generateAnimalImage').addEventListener('click', function () {
-          const animalImageUrl = faker.image.urlLoremFlickr({category: 'animals'});
+          const animalImageUrl = faker.image.url({category: 'animals'});
       
           const imgElement = document.createElement('img');
           imgElement.src = animalImageUrl;
