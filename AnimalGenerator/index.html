@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<head></head>
-<html>
-    <div id="imageContainer"></div>
-    <button id="generateAnimalImage" type="button">Show a new image</button>
-    <script>
-        document.getElementById('generateAnimalImage').addEventListener('click', function () {
-          
-          const imgElement = document.createElement('img');
-          imgElement.src = animalImageUrl;
-      
-          document.getElementById('imageContainer').appendChild(imgElement);
-        });
-    </script>      
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div>
+      <img id="randomCatImage" alt="Random Cat">
+      <button id="loadRandomCat">Load Another Random Cat</button>
+    </div>
+  </body>
 </html>
