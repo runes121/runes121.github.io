@@ -15,5 +15,9 @@ async function fetchCatImage() {
   }
 }
 
-loadButton.addEventListener('click', fetchCatImage);
+loadButton.addEventListener('click', () => {
+    console.log('Button clicked!');
+    fetchCatImage();
+});
+  
 fetchCatImage();
