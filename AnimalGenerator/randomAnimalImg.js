@@ -1,6 +1,6 @@
 const catImage = document.getElementById('randomCatImage');
 const loadButton = document.getElementById('loadRandomCat');
-
+console.log("initialised")
 async function fetchCatImage() {
   try {
     const response = await fetch('https://api.thecatapi.com/v1/images/search');
