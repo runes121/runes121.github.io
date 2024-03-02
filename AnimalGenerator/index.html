@@ -25,6 +25,15 @@
         }
       </script>
       <button type="button" id="loadRandomCat" onclick="random_animal_emoji()">Load Another Random Animal</button>
+      <script>
+        function spin() {
+          document.getElementById("random_emoji_txt").classList.add('spin-anim')
+          setTimeout(() => {
+            document.getElementById("random_emoji_txt").classList.remove('spin-anim')
+          },500)
+        }
+      </script>
+      <button type="button" onclick="spin()">spin</button>
     </div>
   </body>
   v1

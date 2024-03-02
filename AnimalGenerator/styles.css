@@ -14,6 +14,16 @@
     animation: bounce 0.3s 1;
 }
 
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spin-anim {
+    animation: spin 0.5s 1;
+}
+
 #random_emoji_txt {
     font-size: 150px;
     display: inline-block;
