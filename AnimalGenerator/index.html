@@ -8,7 +8,7 @@
 
   <body>
     <div>
-      <span id="random_emoji_txt"></span>
+      <span id="random_emoji_txt">hello</span>
       <script>
         function random_animal_emoji() {
           const possilble_emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🦁", "🐯", "🐮", "🐷", "🐸", "🐙", "🦑", "🦆", "🦉", "🦅", "🦇", "🦄"];
@@ -16,7 +16,7 @@
           document.getElementById("random_emoji_txt").textContent = possilble_emojis[random_emj_index]
         }
       </script>
-      <button type="button" id="loadRandomCat">Load Another Random Cat</button>
+      <button type="button" id="loadRandomCat" onclick="random_animal_emoji">Load Another Random Cat</button>
     </div>
   </body>
   v1
