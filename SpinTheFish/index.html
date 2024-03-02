@@ -8,7 +8,7 @@
 </head>
 <body>
     <img src="fish-white-background-photo-89667456.webp" alt="fish" id="fish">
-    <span id="counter">Spins: 0</span>
+    <h4>Spins: <span id="count">0</span></h4>
     <script>
         const fish = document.getElementById("fish")
 
@@ -17,6 +17,7 @@
             setTimeout(() => {
                 fish.classList.remove("spin-animation")
             },500)
+            document.getElementById("count").innerText++
         }
     </script>
     <button type="button" onclick="spin_fish()">Spin</button>
