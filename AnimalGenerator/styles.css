@@ -1,0 +1,7 @@
+#random_emoji_txt {
+    font-size: 150px;
+}
+#txt_div {
+    display: flex;
+    justify-content: center;
+}

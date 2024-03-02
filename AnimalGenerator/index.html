@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>random animal image</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
     <div>
-      <span id="random_emoji_txt">hello</span>
+      <div id="txt_div">
+        <span id="random_emoji_txt">hello</span>
+      </div>
       <script>
         function random_animal_emoji() {
           console.log("Changing emoji")
-          const possilble_emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🦁", "🐯", "🐮", "🐷", "🐸", "🐙", "🦑", "🦆", "🦉", "🦅", "🦇", "🦄"];
+          const possilble_emojis = ['🦠', '🕸️', '🕷️', '🦂', '🐞', '🪲', '🐝', '🪳', '🐜', '🦗', '🪱', '🪰', '🦟', '🐛', '🐌', '🦋', '🦇', '🐤🐣', '🐥', '🐦','🐧', '🪶', '🦉🦤', '🦚', '🦩', '🪿', '🐦‍⬛', '🦜','🪽', '🦢', '🕊️', '🦅', '🦃', '🐓', '🦆', '🪼', '🦀', '🦞', '🐙', '🦑', '🦐', '🐡', '🐠', '🐟', '🐋', '🐳', '🦭', '🐬', '🦈', '🦦', '🦖', '🦕', '🐉', '🐍', '🐊🐢', '🦎', '🦫', '🐿️', '🐇', '🦔', '🐀' , '🐁', '🐘🦣', '🦡', '🦥🦨', '🦘', '🦙', '🐫', '🐐🐪', '🐑', '🐏', '🐖', '🐄', '🐃', '🐂', '🦛', '🦏', '🦬', '🦌', '🐎', '🐆', '🐅', '🐈‍⬛', '🐈', '🐕', '🐩', '🐕‍🦺', '🦮', '🦧', '🦍', '🐒', '🐾', '🐽', '🐲', '🐔', '🦄', '🫏', '🫎', '🐴', '🦓', '🐸', '🐼', '🐨', '🐻‍❄️', '🐻', '🐰', '🐹', '🐭', '🐗', '🐷', '🐮', '🦝', '🦊', '🦒', '🐯', '🦁', '🐱', '🐺', '🐶', '🐵' ,'😺']
           const random_emj_index = Math.floor(Math.random() * possilble_emojis.length)
           document.getElementById("random_emoji_txt").textContent = possilble_emojis[random_emj_index]
         }
       </script>
-      <button type="button" id="loadRandomCat" onclick="random_animal_emoji()">Load Another Random Cat</button>
+      <button type="button" id="loadRandomCat" onclick="random_animal_emoji()">Load Another Random Animal</button>
     </div>
   </body>
   v1
