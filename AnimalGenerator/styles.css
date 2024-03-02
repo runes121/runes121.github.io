@@ -1,7 +1,25 @@
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bounce-animation {
+    animation: bounce 0.3s 1;
+}
+
 #random_emoji_txt {
     font-size: 150px;
+    display: inline-block;
 }
 #txt_div {
     display: flex;
     justify-content: center;
 }
+
