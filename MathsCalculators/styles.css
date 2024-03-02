@@ -1,0 +1,12 @@
+header {
+    font-size: xx-large;
+}
+
+* {
+    font-family: monospace, Monaco;
+    color: whitesmoke;
+}
+
+body {
+    background-color: rgb(54, 54, 54);
+}
