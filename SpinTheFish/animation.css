@@ -11,6 +11,12 @@ button {
     color: black;
 }
 
+#spin_btn {
+    padding: 5%;
+    border-radius: 10%;
+    border: none;
+}
+
 
 @keyframes spin {
     0% {
