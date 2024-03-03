@@ -10,3 +10,7 @@ header {
 body {
     background-color: rgb(54, 54, 54);
 }
+
+button {
+    color: black;
+}
