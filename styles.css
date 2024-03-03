@@ -9,8 +9,10 @@ body {
 
 button {
     color: black;
+    padding: 1%;
 }
 
 header {
     font-size: xx-large;
+    padding-bottom: 5%;
 }
