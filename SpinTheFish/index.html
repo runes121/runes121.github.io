@@ -14,10 +14,12 @@
 
         function spin_fish() {
             fish.classList.add("spin-animation")
+            document.getElementById("spin_btn").classList.add("disabled")
             setTimeout(() => {
                 fish.classList.remove("spin-animation")
             },500)
             document.getElementById("count").innerText++
+            document.getElementById("spin_btn").classList.remove("disabled")
         }
     </script>
     <button type="button" onclick="spin_fish()" id="spin_btn">Spin</button>
