@@ -15,9 +15,10 @@
 
         function spin_fish() {
             fish.classList.add("spin-animation")
-            document.getElementById("spin_btn").classList.add("disabled")
+            document.getElementById("spin_btn").disabled = true
             setTimeout(() => {
                 fish.classList.remove("spin-animation")
+                document.getElementById("spin_btn").disabled = false
             },500)
             document.getElementById("count").innerText++
             document.getElementById("spin_btn").classList.remove("disabled")
