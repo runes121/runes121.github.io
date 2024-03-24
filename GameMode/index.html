@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mode Picker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>Pick game mode:</header>
+    <script>
+        function pickMode() {
+            const modes = ["Dash", "Chaos", "Timed Chaos", "Original", "Crazy 8s", "Switch", "Special Only", "All Green"]
+            const random_mode_index = Math.floor(Math.random() * modes.length)
+            document.getElementById("chosen_mode").textContent = modes[random_mode_index]
+        }
+    </script>
+    <span id="chosen_mode">Chosen Gamemode: </span>
+    <button type="button" onclick="pickMode()">Choose Gamemode</button>
+    <button type="button" onclick="window.location.href = 'https://runes121.github.io/'" id="mainsitebtn">back to main site</button>
+</body>
+</html>

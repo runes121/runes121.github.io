@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(54, 54, 54);
+}
+
+* {
+    font-family: monospace, Monaco;
+    color: whitesmoke;
+}
+
+button {
+    color: black;
+}
+
+#random_emoji_txt {
+    font-size: 150px;
+    display: inline-block;
+}
+#txt_div {
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    font-size: xx-large;
+}
