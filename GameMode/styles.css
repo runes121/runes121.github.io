@@ -11,15 +11,10 @@ button {
     color: black;
 }
 
-#random_emoji_txt {
-    font-size: 150px;
-    display: inline-block;
-}
-#txt_div {
-    display: flex;
-    justify-content: center;
-}
-
 header {
     font-size: xx-large;
+}
+
+#chosen_mode {
+    font-size: large;
 }

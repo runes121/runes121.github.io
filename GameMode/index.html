@@ -12,7 +12,7 @@
         function pickMode() {
             const modes = ["Dash", "Chaos", "Timed Chaos", "Original", "Crazy 8s", "Switch", "Special Only", "All Green"]
             const random_mode_index = Math.floor(Math.random() * modes.length)
-            document.getElementById("chosen_mode").textContent = modes[random_mode_index]
+            document.getElementById("chosen_mode").textContent = "Chosen Gamemode: " + modes[random_mode_index]
         }
     </script>
     <span id="chosen_mode">Chosen Gamemode: </span>
