@@ -12,22 +12,26 @@ window.onload = function() {
             .then(response => response.json())
             .then(data => {
                 // Get the first search result (most relevant) from the query
-                const pageId = data.query.search[0].pageid;
-
-                // Now retrieve the summary for the relevant page
-                const summaryUrl = `https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&pageids=${pageId}&prop=extracts&exintro=true&explaintext=true`;
-
-                fetch(summaryUrl)
-                    .then(response => response.json())
-                    .then(data => {
-                        const summary = data.query.pages[pageId].extract;
-                        summaryP.textContent = summary;
-                        //console.log(summary);
-                    })
-                    .catch(error => console.error("Error fetching data:", error))
-                    .finally(() => {
+                if (data.query.search[0].title.includes(trainClass)) {
+                    const pageId = data.query.search[0].pageid;
+                    // Now retrieve the summary for the relevant page
+                    const summaryUrl = `https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&pageids=${pageId}&prop=extracts&exintro=true&explaintext=true`;
+    
+                    fetch(summaryUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                            const summary = data.query.pages[pageId].extract;
+                            summaryP.textContent = summary;
+                            //console.log(summary);
+                        })
+                        .catch(error => console.error("Error fetching data:", error))
+                        .finally(() => {
+                            button.disabled = false;
+                        });
+                    } else {
+                        summaryP.textContent = "It is likely this train class doesn't exist.";
                         button.disabled = false;
-                    });
+                    }
             })
             .catch(error => console.error("Error fetching search results:", error));
     }
