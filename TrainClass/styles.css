@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(54, 54, 54);
+}
+
+* {
+    font-family: sans-serif;
+    color: whitesmoke;
+}
+
+#credits {
+    position: fixed;
+    bottom: 8px;
+    left: 16px;
+    font-size: 12px;
+}
+
+#redbold {
+    color: darkred;
+    font: bold;
+    display: inline;
+}
+
+button {
+    color: black;
+    padding: 1%;
+}
+
+input {
+    color: black;
+}
