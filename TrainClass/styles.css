@@ -2,9 +2,27 @@ body {
     background-color: rgb(54, 54, 54);
 }
 
-* {
+h1, label, div {
     font-family: sans-serif;
     color: whitesmoke;
+}
+
+@keyframes rainbowGlow {
+    0% { color: #ff4b5c; }    /* Red */
+    20% { color: #ffcc33; }   /* Orange */
+    40% { color: #33ff99; }   /* Green */
+    60% { color: #33ccff; }   /* Light Blue */
+    80% { color: #9966ff; }   /* Purple */
+    100% { color: #ff4b5c; }  /* Back to Red */
+}
+
+#redbold {
+    font-weight: bold;
+    display: inline;
+    animation-name: rainbowGlow;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
 
 #credits {
@@ -12,12 +30,6 @@ body {
     bottom: 8px;
     left: 16px;
     font-size: 12px;
-}
-
-#redbold {
-    color: darkred;
-    font: bold;
-    display: inline;
 }
 
 button {
