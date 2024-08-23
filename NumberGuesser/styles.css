@@ -16,6 +16,41 @@ button {
     width: 60%;
 }
 
+#confettiContainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 14px;
+    animation: fall linear forwards;
+    opacity: 1;
+}
+
+.confetti {
+    position: absolute;
+    width: 7px;
+    height: 15px;
+}
+
 input {
     color: black;
 }
