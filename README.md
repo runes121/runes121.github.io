@@ -3,4 +3,4 @@
 This is a project website that I made for fun that contains small minigames and other features. 
 
 
-i moved this website to runes121.com
+[i moved this site](https://www.google.com)
