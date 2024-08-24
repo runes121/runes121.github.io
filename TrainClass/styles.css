@@ -7,22 +7,11 @@ h1, label, div {
     color: whitesmoke;
 }
 
-@keyframes rainbowGlow {
-    0% { color: #ff4b5c; }    /* Red */
-    20% { color: #ffcc33; }   /* Orange */
-    40% { color: #33ff99; }   /* Green */
-    60% { color: #33ccff; }   /* Light Blue */
-    80% { color: #9966ff; }   /* Purple */
-    100% { color: #ff4b5c; }  /* Back to Red */
-}
-
-#redbold {
-    font-weight: bold;
-    display: inline;
-    animation-name: rainbowGlow;
-    animation-duration: 8s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+em {
+    font-style: normal;
+    background-image: linear-gradient(to bottom right, red, Orange, yellow);
+    background-clip: text;
+    color: transparent;
 }
 
 #credits {
