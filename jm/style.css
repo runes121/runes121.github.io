@@ -1,0 +1,96 @@
+body {
+    background-color: lightblue;
+    font-family: Verdana;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+.counters {
+    display: flex;
+    gap: 50px;
+}
+
+.counters > div {
+    text-align: center;
+}
+
+#animation-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.pop-image {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    animation: pop 2s ease-out forwards;
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+        filter: none;
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(2);
+        filter: sepia(30%) saturate(100%) hue-rotate(315deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(2);
+        filter: sepia(30%) saturate(100%) hue-rotate(315deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(2);
+        filter: sepia(30%) saturate(100%) hue-rotate(315deg);
+    }
+
+    62% {
+        opacity: 1;
+        transform: scale(2);
+        filter: sepia(99%) saturate(200%) hue-rotate(315deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+        filter: sepia(90%) saturate(200%) hue-rotate(315deg);
+    }
+}
+
+#bibi-otd-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#bibi-otd-container h3 {
+    font-family: Verdana;
+    text-align: center;
+}
+
+#cas_logo {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.smalltext {
+    font-size: xx-small;
+}
