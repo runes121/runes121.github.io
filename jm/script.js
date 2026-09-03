@@ -49,6 +49,8 @@ const images = [
     "images/image18.gif",
     "images/image19.gif",
     "images/image20.gif",
+    "images/image21.gif",
+    "images/image21.gif",
 ];
 
 function popImage() {
@@ -96,9 +98,52 @@ function makeItRainPennies() {
 
         document.body.appendChild(penny);
 
-        penny.addEventListener("animationend", () => {
-            penny.remove();
-        });
+        setTimeout(() => {
+            const pennies = [];
+
+            document.querySelectorAll(".penny").forEach(p => {
+                pennies.push(p);
+            });
+            
+            pennies.sort((a, b) => {
+                return a.getBoundingClientRect().left - b.getBoundingClientRect().left;
+            });
+
+            const collector = document.createElement("img");
+            collector.src = "money-collector.png";
+            collector.classList.add("penny-collector");
+            collector.style.left = 0;
+            collector.style.bottom = 5 + "vh";
+            document.getElementById("penny-container").appendChild(collector);
+
+            let index = 0;
+
+            function collectPenny() {
+                if (index >= pennies.length) {
+                    collector.remove();
+                    return;
+                }
+
+                const penny = pennies[index];
+                const pennyX = penny.getBoundingClientRect().left;
+
+                collector.style.transition = "left 0.05s linear"
+                collector.style.left = (pennyX - 70) + "px";
+
+                collector.addEventListener("transitionend", function moveNext() {
+                    penny.remove();
+            
+                    index++;
+            
+                    collector.removeEventListener("transitionend", moveNext);
+            
+                    collectPenny();
+                });
+            }
+
+            collectPenny();
+
+        }, 3.1 * 1000);
     }
 }
 
