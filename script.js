@@ -85,6 +85,7 @@ setInterval(popImage, 1000);
 
 
 function makeItRainPennies() {
+    document.getElementById("pennies-button").disabled = true;
     const pennyCount = 50;
     
     for (let i = 0; i < pennyCount; i++) {
@@ -96,7 +97,7 @@ function makeItRainPennies() {
         penny.style.left = Math.random() * 100 + "vw";
         penny.style.animationDuration = (Math.random() * 2 + 1) + "s";
 
-        document.body.appendChild(penny);
+        document.getElementById("penny-container").appendChild(penny);
     }
 
     setTimeout(() => {
@@ -122,6 +123,7 @@ function makeItRainPennies() {
         function collectPenny() {
             if (index >= pennies.length) {
                 collector.remove();
+                document.getElementById("pennies-button").disabled = false;
                 return;
             }
 
@@ -143,8 +145,8 @@ function makeItRainPennies() {
         }
 
         collectPenny();
-
     }, 3.1 * 1000);
+    
 }
 
 document.getElementById("pennies-button").addEventListener("click", makeItRainPennies);
