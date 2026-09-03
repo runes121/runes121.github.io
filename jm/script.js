@@ -80,3 +80,26 @@ function popImage() {
 }
 
 setInterval(popImage, 1000);
+
+
+function makeItRainPennies() {
+    const pennyCount = 50;
+    
+    for (let i = 0; i < pennyCount; i++) {
+        const penny = document.createElement("img");
+        penny.src = "penny.png";
+        penny.classList.add("penny");
+        penny.style.width = Math.random() * 100 + 50 + "px";
+        penny.style.height = "auto";
+        penny.style.left = Math.random() * 100 + "vw";
+        penny.style.animationDuration = (Math.random() * 2 + 1) + "s";
+
+        document.body.appendChild(penny);
+
+        penny.addEventListener("animationend", () => {
+            penny.remove();
+        });
+    }
+}
+
+document.getElementById("pennies-button").addEventListener("click", makeItRainPennies);
