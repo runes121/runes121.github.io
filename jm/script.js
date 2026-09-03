@@ -85,6 +85,7 @@ setInterval(popImage, 1000);
 
 
 function makeItRainPennies() {
+    document.getElementById("pennies-button").disabled = true;
     const pennyCount = 50;
     
     for (let i = 0; i < pennyCount; i++) {
@@ -96,55 +97,56 @@ function makeItRainPennies() {
         penny.style.left = Math.random() * 100 + "vw";
         penny.style.animationDuration = (Math.random() * 2 + 1) + "s";
 
-        document.body.appendChild(penny);
+        document.getElementById("penny-container").appendChild(penny);
+    }
 
-        setTimeout(() => {
-            const pennies = [];
+    setTimeout(() => {
+        const pennies = [];
 
-            document.querySelectorAll(".penny").forEach(p => {
-                pennies.push(p);
-            });
-            
-            pennies.sort((a, b) => {
-                return a.getBoundingClientRect().left - b.getBoundingClientRect().left;
-            });
+        document.querySelectorAll(".penny").forEach(p => {
+            pennies.push(p);
+        });
+        
+        pennies.sort((a, b) => {
+            return a.getBoundingClientRect().left - b.getBoundingClientRect().left;
+        });
 
-            const collector = document.createElement("img");
-            collector.src = "money-collector.png";
-            collector.classList.add("penny-collector");
-            collector.style.left = 0;
-            collector.style.bottom = 5 + "vh";
-            document.getElementById("penny-container").appendChild(collector);
+        const collector = document.createElement("img");
+        collector.src = "money-collector.png";
+        collector.classList.add("penny-collector");
+        collector.style.left = 0;
+        collector.style.bottom = 5 + "vh";
+        document.getElementById("penny-container").appendChild(collector);
 
-            let index = 0;
+        let index = 0;
 
-            function collectPenny() {
-                if (index >= pennies.length) {
-                    collector.remove();
-                    return;
-                }
-
-                const penny = pennies[index];
-                const pennyX = penny.getBoundingClientRect().left;
-
-                collector.style.transition = "left 0.05s linear"
-                collector.style.left = (pennyX - 70) + "px";
-
-                collector.addEventListener("transitionend", function moveNext() {
-                    penny.remove();
-            
-                    index++;
-            
-                    collector.removeEventListener("transitionend", moveNext);
-            
-                    collectPenny();
-                });
+        function collectPenny() {
+            if (index >= pennies.length) {
+                collector.remove();
+                document.getElementById("pennies-button").disabled = false;
+                return;
             }
 
-            collectPenny();
+            const penny = pennies[index];
+            const pennyX = penny.getBoundingClientRect().left;
 
-        }, 3.1 * 1000);
-    }
+            collector.style.transition = "left 0.05s linear"
+            collector.style.left = (pennyX - 70) + "px";
+
+            collector.addEventListener("transitionend", function moveNext() {
+                penny.remove();
+        
+                index++;
+        
+                collector.removeEventListener("transitionend", moveNext);
+        
+                collectPenny();
+            });
+        }
+
+        collectPenny();
+    }, 3.1 * 1000);
+    
 }
 
 document.getElementById("pennies-button").addEventListener("click", makeItRainPennies);
